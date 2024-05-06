@@ -1,5 +1,4 @@
-
-
+// Declarando variables
 let button = document.getElementById('boton');
 
 button.addEventListener('click', () => {
@@ -8,8 +7,7 @@ button.addEventListener('click', () => {
     const result = document.getElementById('resultado');
     let EstadoAltura=false, EstadoPeso=false;
 
-    // Altura
-
+    // Casilla de altura
     if(altura === '' || isNaN(altura) || (altura <= 0)) {
         document.getElementById('ErrorAltura').innerHTML = "Por favor, introduzca un número válido para la altura"
     }else{
@@ -17,8 +15,7 @@ button.addEventListener('click', () => {
         EstadoAltura=true;
     }
 
-    // Peso
-
+    // Casilla de peso
     if(peso === '' || isNaN(peso) || (peso <= 0)) {
         document.getElementById('ErrorPeso').innerHTML = "Por favor, introduzca un número válido para el peso"
     }else{
@@ -26,12 +23,11 @@ button.addEventListener('click', () => {
         EstadoPeso=true;
     }
 
-    // Cálculo
-
+    // Cálculo de IMC
     if(EstadoAltura && EstadoPeso){
         const imc = (peso / ((altura*altura)/10000)).toFixed(1);
 
-    // Resultados
+    // Resultados según IMC
     if (imc < 18.6) {
         result.innerHTML = 'Bajo peso: ' + imc;
         console.log('Bajo peso: ' + imc);
